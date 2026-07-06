@@ -31,35 +31,47 @@ Naturblikk skal formidle disse små øyeblikkene uten å overdrive dem.
 # Våre prinsipper
 
 ## Ekte
-
 Alt innhold skal bygge på virkelige naturopplevelser.
 
 ## Rolig
-
 Nettsiden skal oppleves som et sted man kan senke skuldrene.
 
 ## Enkelt
-
-Hver funksjon skal ha en tydelig hensikt. Hvis noe ikke gir verdi for brukeren, skal det vurderes fjernet.
+Hver funksjon skal ha en tydelig hensikt.
 
 ## Tilgjengelig
+Naturblikk skal fungere godt både på mobil og datamaskin.
 
-Naturblikk skal fungere godt både på mobil og datamaskin, og være enkelt å bruke for alle.
+## Bærekraftig drift
+Naturblikk skal finansieres på en måte som gjør prosjektet mulig å videreutvikle over tid. Reklame og samarbeid er en naturlig del av dette, men skal alltid være diskret og aldri forringe naturopplevelsen.
 
 ## Respekt for naturen
-
 Prosjektet skal alltid sette hensynet til dyrelivet først.
+
+---
+
+# Reklame
+
+Naturblikk skal kunne generere inntekter gjennom annonser og eventuelle samarbeid.
+
+Prinsipper:
+
+- Reklame skal være tydelig merket.
+- Reklame skal ikke dekke eller avbryte livestreamen.
+- Brukeropplevelsen skal alltid prioriteres.
+- Kvalitet er viktigere enn antall annonser.
+
+Målet er at inntektene skal bidra til drift, nytt utstyr og videre utvikling av prosjektet.
 
 ---
 
 # Hva Naturblikk ikke skal være
 
-- Ikke en reklameplattform.
-- Ikke en side full av distraksjoner.
-- Ikke clickbait.
-- Ikke en konkurranse om flest funksjoner.
+- En side full av distraksjoner.
+- Clickbait.
+- En konkurranse om flest funksjoner.
 
-Teknologien skal støtte naturopplevelsen – aldri overskygge den.
+Teknologien og reklamen skal støtte prosjektet – aldri overskygge naturopplevelsen.
 
 ---
 
