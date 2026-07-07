@@ -12,6 +12,8 @@ Publisere en stabil og enkel nettside hvor besøkende kan følge en direktesendi
 
 Prosjektet skal være lite, robust og enkelt å vedlikeholde.
 
+I første versjon skal direktesendingen ligge på forsiden. En egen Live-side kan opprettes senere hvis prosjektet får flere kameraer eller mer avansert innhold.
+
 ---
 
 # Må være ferdig
@@ -21,14 +23,18 @@ Prosjektet skal være lite, robust og enkelt å vedlikeholde.
 - [x] GitHub-repository
 - [x] Domene registrert
 - [x] Webhotell bestilt
-- [ ] WordPress installert
+- [x] WordPress installert
+- [x] Kadence Theme installert
+- [x] Kadence Blocks installert
 - [ ] SSL aktivert
 
 ## Design
 
 - [x] Første logo
+- [x] Logo lastet opp i WordPress
+- [ ] Globale farger satt i Kadence
+- [ ] Fonter satt i Kadence
 - [ ] Ferdig forside
-- [ ] Enkel Live-side
 - [ ] Mobiltilpasset design
 
 ## Streaming
@@ -37,10 +43,11 @@ Prosjektet skal være lite, robust og enkelt å vedlikeholde.
 - [ ] RTSP testet
 - [ ] OBS konfigurert
 - [ ] Stabil livestream
-- [ ] Videospiller på nettsiden
+- [ ] Videospiller på forsiden
 
 ## Innhold
 
+- [x] Grunnsider opprettet
 - [ ] Om Naturblikk
 - [ ] Kontakt
 - [ ] Personvern
@@ -65,6 +72,7 @@ Prosjektet skal være lite, robust og enkelt å vedlikeholde.
 
 - Kamera 2
 - Flere kameravinkler
+- Egen Live-side
 
 ## Ekstra funksjoner
 
@@ -81,7 +89,7 @@ Prosjektet skal være lite, robust og enkelt å vedlikeholde.
 Naturblikk kan regnes som lansert når en besøkende kan:
 
 1. Åpne https://naturblikk.no
-2. Se en stabil direktesending.
+2. Se en stabil direktesending på forsiden.
 3. Lese kort om prosjektet.
 4. Bruke siden på mobil og PC.
 
