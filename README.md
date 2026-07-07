@@ -4,7 +4,7 @@
 
 Naturblikk er et norsk natur- og livestreamprosjekt som starter med en fuglemater på Helgeland. Målet er å lage en rolig, tilgjengelig og moderne nettside der besøkende kan følge fuglelivet direkte – og etter hvert utforske arter, historikk, værdata og statistikk.
 
-Prosjektet starter enkelt med WordPress, to utendørskameraer og en live-side. Over tid skal løsningen kunne vokse til en mer avansert plattform med egen streamingmotor, AI-basert artsgjenkjenning og historikk.
+Prosjektet starter enkelt med WordPress, to utendørskameraer og livestream direkte på forsiden. Over tid kan løsningen vokse til en mer avansert plattform med egen streamingmotor, AI-basert artsgjenkjenning og historikk.
 
 ---
 
@@ -12,13 +12,13 @@ Prosjektet starter enkelt med WordPress, to utendørskameraer og en live-side. O
 
 🚧 **Under utvikling**
 
-Første mål er å få opp en enkel nettside på:
+WordPress er installert på:
 
 ```text
 https://naturblikk.no
 ```
 
-Deretter kobles første livestream til når kameraene er klare.
+Neste hovedoppgave er SSL/HTTPS, globalt designoppsett i Kadence og bygging av forsiden.
 
 ---
 
@@ -32,19 +32,18 @@ Bare norsk natur, fugleliv og små øyeblikk.
 
 ---
 
-## Planlagte funksjoner
+## Første versjon
 
-### Første versjon
-
-- Enkel, moderne nettside
-- Live-side klar for videostrøm
+- Enkel, moderne WordPress-side
+- Livestream direkte på forsiden
 - Informasjon om prosjektet
 - Mobilvennlig design
-- Grunnleggende WordPress-oppsett
+- Diskré og bærekraftig annonseplassering senere
 
-### Senere versjoner
+---
 
-- 📺 Livestream fra fuglemater
+## Senere versjoner
+
 - 🎥 Flere kameravinkler
 - 🐦 AI-basert artsgjenkjenning
 - 📊 Statistikk over observasjoner
@@ -61,10 +60,12 @@ Bare norsk natur, fugleliv og små øyeblikk.
 Naturblikk.no
 │
 ├── WordPress
-│   ├── Forside
-│   ├── Live
-│   ├── Om
-│   └── Nyheter
+│   ├── Forside med livestream
+│   ├── Om prosjektet
+│   ├── Arter
+│   ├── Galleri
+│   ├── Kontakt
+│   └── Personvern
 │
 ├── Stream
 │   ├── Kameraer
@@ -96,7 +97,7 @@ naturblikk/
 ├── assets/         # Logo, bilder, ikoner og grafikk
 ├── backend/        # API, database og serverlogikk
 ├── docs/           # Dokumentasjon, roadmap og arkitektur
-├── frontend/       # Fremtidig egen frontend/webapp
+├── frontend/       # Designreferanse og fremtidig frontend/webapp
 ├── obs/            # OBS-profiler, scener og notater
 ├── scripts/        # Hjelpeskript og automatisering
 ├── stream/         # MediaMTX, RTSP, WebRTC og streamingoppsett
@@ -117,13 +118,15 @@ naturblikk/
 - [x] Domene registrert
 - [x] GitHub-repository opprettet
 - [x] Grunnstruktur opprettet
-- [ ] WordPress installert
+- [x] WordPress installert
+- [x] Kadence Theme installert
+- [x] Kadence Blocks installert
+- [ ] SSL/HTTPS aktivert
 - [ ] Første forside publisert
 
-### v0.2 – Første live-side
+### v0.2 – Første live-forside
 
-- [ ] Opprette `/live`
-- [ ] Lage midlertidig live-placeholder
+- [ ] Lage midlertidig live-placeholder på forsiden
 - [ ] Klargjøre layout for videospiller
 - [ ] Teste mobilvisning
 
@@ -146,9 +149,9 @@ naturblikk/
 
 - [ ] Stabil livestream
 - [ ] Ferdig forside
-- [ ] Live-side
 - [ ] Om-side
 - [ ] Kontaktinformasjon
+- [ ] Personvern
 - [ ] Enkel driftsrutine
 
 ---
@@ -161,7 +164,7 @@ Foreløpig plan:
 - **Kadence** – lett og moderne WordPress-tema
 - **OBS** – miksing av kamera, lyd og overlay
 - **MediaMTX** – fremtidig egen streamingserver
-- **Python** – AI og analyse
+- **Python** – AI og analyse senere
 - **SQLite/PostgreSQL** – historikk og statistikk senere
 
 ---
@@ -176,16 +179,7 @@ Naturblikk skal føles:
 - moderne
 - lite påtrengende
 
-Foreslått uttrykk:
-
-```text
-Primærfarge:   Dyp grønn/blå
-Sekundær:      Mosegrønn
-Bakgrunn:      Varm hvit
-Typografi:     Enkel og moderne
-```
-
-Mer detaljer ligger etter hvert i `docs/branding.md`.
+Mer detaljer ligger i `docs/branding.md` og `docs/style-guide.md`.
 
 ---
 
@@ -199,4 +193,4 @@ Prosjektet er foreløpig lisensiert under MIT-lisensen. Se `LICENSE`.
 
 Naturblikk er et aktivt hobbyprosjekt under oppbygging.
 
-Første milepæl er å få opp en enkel nettside og en stabil livestream. Etter det bygges prosjektet videre steg for steg.
+Første milepæl er å få opp en enkel forside med livestream. Etter det bygges prosjektet videre steg for steg.
