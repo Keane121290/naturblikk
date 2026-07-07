@@ -1,41 +1,55 @@
 # Naturblikk – Arkitektur
 
-> Versjon 0.1
+> Versjon 0.2
 
 ## Mål
 
-Naturblikk skal være en moderne plattform for direktesendt norsk natur.
+Naturblikk skal starte som et enkelt hobbyprosjekt med WordPress som publiseringsplattform og livestream direkte på forsiden.
 
-Løsningen skal være modulær, slik at hver del kan videreutvikles uten å påvirke resten av systemet.
+Løsningen skal være enkel nå, men strukturert nok til at streaming, AI, statistikk og flere kameraer kan bygges på senere.
 
 ---
 
-# Arkitektur
+# Nåværende arkitektur
 
-                    Besøkende
-                         │
-                         ▼
-                https://naturblikk.no
-                         │
-                  WordPress (CMS)
-                         │
-         ┌───────────────┼────────────────┐
-         │               │                │
-         ▼               ▼                ▼
-      Live-side       Artikler        Informasjon
-         │
-         ▼
-      Videospiller
-         │
-         ▼
-      MediaMTX
-         │
-     OBS Studio
-         │
- ┌───────┴────────┐
- │                │
- ▼                ▼
-Kamera 1      Kamera 2
+```text
+Besøkende
+     │
+     ▼
+https://naturblikk.no
+     │
+     ▼
+WordPress + Kadence
+     │
+     ├── Forside med livestream
+     ├── Om prosjektet
+     ├── Arter
+     ├── Galleri
+     ├── Kontakt
+     └── Personvern
+```
+
+I første versjon skal livestreamen ligge på forsiden. En egen Live-side kan vurderes senere hvis prosjektet får flere kameraer eller mer avanserte visninger.
+
+---
+
+# Fremtidig streamingflyt
+
+```text
+Tapo C310
+     │
+     ▼
+RTSP
+     │
+     ▼
+OBS Studio
+     │
+     ▼
+MediaMTX
+     │
+     ▼
+Videospiller på naturblikk.no
+```
 
 ---
 
@@ -46,12 +60,15 @@ Kamera 1      Kamera 2
 Ansvar:
 
 - Forside
-- Live-side
-- Om-side
+- Om prosjektet
+- Arter
+- Galleri
 - Kontakt
-- Nyheter
+- Personvern
+- SEO
+- Annonseplasseringer senere
 
-WordPress skal være CMS – ikke streamingmotor.
+WordPress skal være nettside og publiseringsplattform – ikke streamingmotor.
 
 ---
 
@@ -60,33 +77,31 @@ WordPress skal være CMS – ikke streamingmotor.
 Består av:
 
 - Tapo C310
+- RTSP
 - OBS Studio
 - MediaMTX
 
-OBS mottar videostrømmer fra kameraene.
-
-OBS kan legge på:
+OBS kan etter hvert legge på:
 
 - logo
 - klokke
 - vær
 - tekst
-- AI-overlay
+- diskret overlay
 
-Deretter sendes én strøm videre til MediaMTX.
+Deretter sendes én strøm videre til nettsiden.
 
 ---
 
 ## AI
 
-Fase 1
+AI kommer senere og skal ikke være del av MVP.
+
+Mulige funksjoner:
 
 - Fuglegjenkjenning
 - Talefiltrering
 - Lydanalyse
-
-Fase 2
-
 - Individtelling
 - Artsstatistikk
 - Automatisk høydepunkt
@@ -95,105 +110,53 @@ Fase 2
 
 ## Backend
 
-Backend skal håndtere:
+Backend bygges først når det finnes et konkret behov.
+
+Mulige fremtidige ansvarsområder:
 
 - API
 - Database
 - AI-resultater
 - Statistikk
 - Historikk
-- Vær
-
-WordPress skal hente data fra API-et.
-
----
-
-## Database
-
-Planlagte tabeller
-
-BirdSpecies
-
-BirdObservations
-
-Weather
-
-Events
-
-CameraStatus
-
-Statistics
+- Værdata
 
 ---
 
 # Modulprinsipp
 
-Alle deler skal kunne byttes ut.
+Teknologi kan byttes ut senere uten at hele prosjektet må bygges på nytt.
 
-Eksempel:
+Eksempler:
 
-Tapo
+```text
+Tapo → Reolink → PTZ
+```
 
-↓
+```text
+WordPress → egen frontend
+```
 
-Reolink
-
-↓
-
-PTZ
-
-uten å påvirke nettsiden.
-
-Samme gjelder AI.
+Slike bytter er mulige, men skal ikke prioriteres før prosjektet faktisk trenger det.
 
 ---
 
-# Fremtidige lokasjoner
+# Teknologi nå
 
-Systemet skal støtte flere lokasjoner.
-
-Eksempel:
-
-Naturblikk
-
-├── Helgeland
-
-├── Vega
-
-├── Lofoten
-
-├── Dovrefjell
-
-└── Hardangervidda
-
-Alle bruker samme backend.
-
----
-
-# Teknologi
-
-Nettside
+Nettside:
 
 - WordPress
-- Kadence
+- Kadence Theme
+- Kadence Blocks
 
-Streaming
+Streaming:
 
 - OBS
-- MediaMTX
+- MediaMTX senere
 
-AI
+AI:
 
-- Python
-
-Backend
-
-- Python FastAPI (foreslått)
-
-Database
-
-- SQLite først
-- PostgreSQL senere
+- Ikke del av første versjon
 
 ---
 
@@ -207,18 +170,14 @@ Naturblikk skal være:
 - moderne
 - naturfokusert
 
-Ingen unødvendige animasjoner.
-
-Ingen visuell støy.
-
 Livestreamen skal alltid være hovedfokuset.
 
 ---
 
 # Første milepæl
 
-- WordPress
-- Live-side
+- SSL/HTTPS
+- Forside med live-plassholder
 - Ett kamera
 - OBS
 - Stabil videostrøm
