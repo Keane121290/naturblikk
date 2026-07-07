@@ -13,24 +13,33 @@ Dette dokumentet viser prosjektets overordnede fremdrift.
 - [x] Logo (første versjon)
 - [x] Dokumentasjon etablert
 - [x] Kamera bestilt
+- [x] WordPress installert på naturblikk.no
+- [x] Kadence Theme installert
+- [x] Kadence Blocks installert
+- [x] Rank Math SEO installert
+- [x] Complianz installert
+- [x] Grunnsider opprettet
+- [x] Logo lastet opp i WordPress
 
 ---
 
 ## 🚧 Pågår
 
-- [ ] WordPress installasjon
-- [ ] Oppsett av nettside
+- [ ] SSL/HTTPS
+- [ ] Kadence globale farger og fonter
+- [ ] Forside med live som hovedinnhold
 
 ---
 
 ## 🎯 Neste milepæl – MVP
 
-- [ ] WordPress klart
-- [ ] Forside
-- [ ] Live-side
+- [ ] SSL aktivert
+- [ ] Forside ferdig
+- [ ] Livestream-plassholder på forsiden
 - [ ] Kamera montert
 - [ ] OBS konfigurert
 - [ ] Livestream på naturblikk.no
+- [ ] Mobilvisning testet
 
 ---
 
@@ -42,6 +51,7 @@ Dette dokumentet viser prosjektets overordnede fremdrift.
 - Værintegrasjon
 - Kamera nummer to
 - Historiske observasjoner
+- Egen Live-side hvis behovet oppstår
 
 ---
 
