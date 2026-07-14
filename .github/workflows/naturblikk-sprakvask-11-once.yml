@@ -1,0 +1,143 @@
+name: Naturblikk språkvask 11 arter
+
+on:
+  push:
+    paths:
+      - '.github/workflows/naturblikk-sprakvask-11-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hent repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Språkvask og valider CSV
+        env:
+          PAYLOAD_B64: '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' 
+        run: |
+          python - <<'PY'
+          import base64
+          import csv
+          import hashlib
+          import io
+          import json
+          import os
+          import zlib
+          from pathlib import Path
+
+          csv_path = Path('arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv')
+          workflow_path = Path('.github/workflows/naturblikk-sprakvask-11-once.yml')
+
+          raw = csv_path.read_bytes()
+          current_blob_sha = hashlib.sha1(
+              f"blob {len(raw)}\0".encode('utf-8') + raw
+          ).hexdigest()
+
+          payload = json.loads(
+              zlib.decompress(base64.b64decode(os.environ['PAYLOAD_B64'])).decode('utf-8')
+          )
+
+          if current_blob_sha != payload['expected_blob_sha']:
+              raise SystemExit(
+                  f"CSV-filen er endret siden språkvasken ble laget. "
+                  f"Forventet {payload['expected_blob_sha']}, fant {current_blob_sha}."
+              )
+
+          text = raw.decode('utf-8-sig')
+          reader = csv.DictReader(io.StringIO(text))
+          headers = reader.fieldnames
+          rows = list(reader)
+
+          expected_headers = [
+              'post_title','post_name','post_status','artsgruppe',
+              'vitenskapelig_navn','engelsk_navn','kort_beskrivelse',
+              'lang_beskrivelse','storrelse','vekt','kjennetegn','levested',
+              'utbredelse','sesong_aktiv_periode','mat_naering',
+              'rodlistestatus','status_i_norge','artsdatabanken_takson_id',
+              'kilde_artsdatabanken','kilde_snl',
+              'kilde_fuglevennen_miljolaere','kilde_birdlife_fugleatlas',
+              'sist_kontrollert','importstatus'
+          ]
+
+          if headers != expected_headers:
+              raise SystemExit('CSV-headeren er ikke den forventede 24-kolonners headeren.')
+
+          if len(rows) != 238:
+              raise SystemExit(f'Forventet 238 arter, fant {len(rows)}.')
+
+          slugs = [row['post_name'] for row in rows]
+          if len(set(slugs)) != 238:
+              raise SystemExit('CSV-filen inneholder dupliserte slugs.')
+
+          updates = payload['updates']
+          found = set()
+
+          for row in rows:
+              slug = row['post_name']
+              if slug not in updates:
+                  continue
+
+              found.add(slug)
+              for field, value in updates[slug].items():
+                  if field not in headers:
+                      raise SystemExit(f'Ukjent felt {field} for {slug}.')
+                  row[field] = value
+
+              row['sist_kontrollert'] = payload['sist_kontrollert']
+              row['importstatus'] = payload['importstatus']
+
+          missing = sorted(set(updates) - found)
+          if missing:
+              raise SystemExit('Fant ikke disse artene: ' + ', '.join(missing))
+
+          if len(found) != 11:
+              raise SystemExit(f'Forventet å oppdatere 11 arter, oppdaterte {len(found)}.')
+
+          out = io.StringIO()
+          writer = csv.DictWriter(
+              out,
+              fieldnames=headers,
+              quoting=csv.QUOTE_ALL,
+              lineterminator='\n'
+          )
+          writer.writeheader()
+          writer.writerows(rows)
+          csv_path.write_text(out.getvalue(), encoding='utf-8')
+
+          # Kontroller resultatet en gang til.
+          with csv_path.open(encoding='utf-8', newline='') as handle:
+              check_reader = csv.DictReader(handle)
+              check_rows = list(check_reader)
+
+          if check_reader.fieldnames != expected_headers:
+              raise SystemExit('Headeren ble endret under skriving.')
+          if len(check_rows) != 238:
+              raise SystemExit('Antall arter ble endret under skriving.')
+          if len({r['post_name'] for r in check_rows}) != 238:
+              raise SystemExit('Dupliserte slugs etter skriving.')
+
+          for slug in updates:
+              row = next(r for r in check_rows if r['post_name'] == slug)
+              if row['importstatus'] != payload['importstatus']:
+                  raise SystemExit(f'Importstatus ble ikke oppdatert for {slug}.')
+
+          workflow_path.unlink()
+          print('Språkvask fullført og validert for 11 arter.')
+          PY
+
+      - name: Lagre oppdateringen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv
+          git add .github/workflows/naturblikk-sprakvask-11-once.yml
+          git commit -m "Språkvask de 11 kvalitetssikrede artene"
+          git push origin main
