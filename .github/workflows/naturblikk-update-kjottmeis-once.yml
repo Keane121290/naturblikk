@@ -1,0 +1,22 @@
+name: Naturblikk – oppdater Kjøttmeis én gang
+
+on:
+  push:
+    paths:
+      - '.github/workflows/naturblikk-update-kjottmeis-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-kjottmeis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hent repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Oppdater og valider Kjø
