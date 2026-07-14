@@ -1,0 +1,157 @@
+name: Naturblikk kvalitetsbatch 01
+
+on:
+  push:
+    paths:
+      - '.github/workflows/naturblikk-kvalitetsbatch-01.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  oppdater-artsfil:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hent repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Oppdater og valider batch 1
+        env:
+          PAYLOAD_B64: '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'
+        run: |
+          python - <<'PY'
+          import base64
+          import csv
+          import io
+          import json
+          import os
+          import zlib
+          from pathlib import Path
+
+          csv_path = Path('arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv')
+          status_path = Path('arter/kvalitetskontroll-status.md')
+          workflow_path = Path('.github/workflows/naturblikk-kvalitetsbatch-01.yml')
+
+          payload = json.loads(
+              zlib.decompress(base64.b64decode(os.environ['PAYLOAD_B64'])).decode('utf-8')
+          )
+          updates = payload['updates']
+
+          with csv_path.open(encoding='utf-8-sig', newline='') as handle:
+              reader = csv.DictReader(handle)
+              headers = reader.fieldnames
+              rows = list(reader)
+
+          expected_headers = [
+              'post_title', 'post_name', 'post_status', 'artsgruppe',
+              'vitenskapelig_navn', 'engelsk_navn', 'kort_beskrivelse',
+              'lang_beskrivelse', 'storrelse', 'vekt', 'kjennetegn',
+              'levested', 'utbredelse', 'sesong_aktiv_periode', 'mat_naering',
+              'rodlistestatus', 'status_i_norge', 'artsdatabanken_takson_id',
+              'kilde_artsdatabanken', 'kilde_snl',
+              'kilde_fuglevennen_miljolaere', 'kilde_birdlife_fugleatlas',
+              'sist_kontrollert', 'importstatus',
+          ]
+
+          if headers != expected_headers:
+              raise SystemExit('CSV-headeren er endret eller har feil rekkefølge.')
+
+          if len(rows) != 238:
+              raise SystemExit(f'Forventet 238 arter, fant {len(rows)}.')
+
+          slugs = [row['post_name'] for row in rows]
+          if len(set(slugs)) != 238:
+              raise SystemExit('CSV-filen inneholder dupliserte slugs.')
+
+          index = {row['post_name']: row for row in rows}
+          missing = sorted(set(updates) - set(index))
+          if missing:
+              raise SystemExit('Mangler arter i CSV: ' + ', '.join(missing))
+
+          for slug, values in updates.items():
+              unknown = sorted(set(values) - set(headers))
+              if unknown:
+                  raise SystemExit(f'Ukjente felt for {slug}: {unknown}')
+              index[slug].update(values)
+
+          output = io.StringIO()
+          writer = csv.DictWriter(
+              output,
+              fieldnames=headers,
+              quoting=csv.QUOTE_ALL,
+              lineterminator='\n',
+          )
+          writer.writeheader()
+          writer.writerows(rows)
+          csv_path.write_text(output.getvalue(), encoding='utf-8')
+
+          with csv_path.open(encoding='utf-8', newline='') as handle:
+              checked = list(csv.DictReader(handle))
+
+          if len(checked) != 238:
+              raise SystemExit('Validering etter skriving fant feil antall arter.')
+
+          completed = [
+              row for row in checked
+              if row.get('importstatus', '').startswith('Fullstendig kvalitetssikret')
+          ]
+
+          completed_slugs = {row['post_name'] for row in completed}
+          expected_completed = {'kjottmeis'} | set(updates)
+          if completed_slugs != expected_completed:
+              raise SystemExit(
+                  'Uventet sett med fullstendig kvalitetssikrede arter: '
+                  + ', '.join(sorted(completed_slugs))
+              )
+
+          batch_lines = [
+              f"- {name} (`{slug}`)"
+              for name, slug in payload['batch_species']
+          ]
+          tracker_lines = [
+              '# Naturblikk – status for kvalitetskontroll',
+              '',
+              f'Sist oppdatert: **{payload["date"]}**',
+              '',
+              '- Totalt antall arter: **238**',
+              f'- Fullstendig kvalitetssikret: **{len(completed)}**',
+              f'- Gjenstår: **{238 - len(completed)}**',
+              '',
+              '## Ferdig kontrollert',
+              '',
+              '### Testart',
+              '',
+              '- Kjøttmeis (`kjottmeis`)',
+              '',
+              '### Batch 1 – hage- og fuglematerarter',
+              '',
+              *batch_lines,
+              '',
+              '## Gjenstår',
+              '',
+              'Alle arter som ikke er oppført over. Neste batch velges blant vanlige hage-, skog- og fuglematerarter.',
+              '',
+              '## Kontrollstandard',
+              '',
+              'En art regnes som fullstendig kvalitetssikret når navn, taksonomi, rødlistestatus, status i Norge, størrelse, vekt, kjennetegn, levested, utbredelse, sesong, næring, kilder og artsspesifikk langtekst er kontrollert. Feltet `importstatus` starter da med `Fullstendig kvalitetssikret`.',
+              '',
+          ]
+          status_path.write_text('\n'.join(tracker_lines), encoding='utf-8')
+
+          workflow_path.unlink()
+          PY
+
+      - name: Lagre oppdateringen
+        run: |
+          git config user.name "Naturblikk kvalitetskontroll"
+          git config user.email "actions@users.noreply.github.com"
+          git add arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv
+          git add arter/kvalitetskontroll-status.md
+          git add .github/workflows/naturblikk-kvalitetsbatch-01.yml
+          git diff --cached --check
+          git commit -m "Kvalitetssikre batch 1: 10 hage- og fuglematerarter"
+          git push origin main
