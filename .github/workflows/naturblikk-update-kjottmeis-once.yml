@@ -1,0 +1,64 @@
+name: Naturblikk oppdater Kjøttmeis
+
+on:
+  push:
+    paths:
+      - '.github/workflows/naturblikk-update-kjottmeis-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Oppdater CSV
+        env:
+          ROW_B64: 'Iktqw7h0dG1laXMiLCJram90dG1laXMiLCJwdWJsaXNoIiwiRnVnbGVyIiwiUGFydXMgbWFqb3IiLCJHcmVhdCBUaXQiLCJLasO4dHRtZWlzIGVyIE5vcmdlcyBzdMO4cnN0ZSBtZWlzIG9nIGVuIGF2IGxhbmRldHMgdmFubGlnc3RlIGhhZ2VmdWdsZXIsIGxldHQgZ2plbmtqZW5uZWxpZyBww6UgZ3VsdCBicnlzdCwgc3ZhcnQgaG9kZSBvZyBodml0ZSBraW5uLiIsIjxoMj5PbSBrasO4dHRtZWlzPC9oMj48cD5LasO4dHRtZWlzICg8ZW0+UGFydXMgbWFqb3I8L2VtPikgZXIgTm9yZ2VzIHN0w7hyc3RlIG1laXMgb2cgZW4gYXYgZGUgdmFubGlnc3RlIGZ1Z2xlbmUgaSBoYWdlciwgcGFya2VyIG9nIHNrb2dzb21yw6VkZXIuIERlbiBlciBsZXR0IMOlIGtqZW5uZSBpZ2plbiBww6UgZGV0IHN2YXJ0ZSBob2RldCwgZGUgaHZpdGUga2lubmVuZSBvZyBkZW4gZ3VsZSB1bmRlcnNpZGVuIG1lZCBlbiBzdmFydCBzdHJpcGUgbGFuZ3MgYnJ5c3RldCBvZyBidWtlbi48L3A+PGgyPktqZW5uZXRlZ248L2gyPjxwPk92ZXJzaWRlbiBlciBncsO4bm5ha3RpZywgbWVucyB2aW5nZW5lIG9nIHN0amVydGVuIGVyIGJsw6VncsOlIG1lZCBldCBzbWFsdCwgbHlzdCB2aW5nZWLDpW5kLiBIYW5uZW4gaGFyIHNvbSByZWdlbCBlbiBicmVkZXJlIHN2YXJ0IGJyeXN0c3RyaXBlIG9nIGVuIHR5ZGVsaWcgbcO4cmsgYnVrZmxla2suIEh1bm5lbiBlciBvZnRlIGxpdHQgbWF0dGVyZSBpIGZhcmdlbmUgb2cgaGFyIGVuIHNtYWxlcmUgc3RyaXBlLiBVbmdmdWdsZW5lIGxpZ25lciBkZSB2b2tzbmUsIG1lbiBoYXIgc3Zha2VyZSBmYXJnZXIuPC9wPjxoMj5MZXZlc3RlZCBvZyB1dGJyZWRlbHNlPC9oMj48cD5LasO4dHRtZWlzIGZpbm5lcyBvdmVyIG5lc3RlbiBoZWxlIE5vcmdlLCBtZW4gZXIgbWluZHJlIHZhbmxpZyBpIGRlIG1lc3QgYWxwaW5lIG9tcsOlZGVuZS4gRGVuIHRyaXZlcyBiZXN0IGkgbMO4dnNrb2cgb2cgYmxhbmRpbmdzc2tvZyBpIGxhdmxhbmRldCwgbWVuIGVyIG9nc8OlIHZhbmxpZyBpIGhhZ2VyLCBwYXJrZXIsIGt1bHR1cmxhbmRza2FwIG9nIGFuZHJlIHN0ZWRlciBtZWQgdHLDpnIsIGh1bHJvbSBlbGxlciBmdWdsZWthc3Nlci48L3A+PGgyPk1hdCBvZyBhZGZlcmQ8L2gyPjxwPkkgaGVra2VzZXNvbmdlbiBsZXZlciBrasO4dHRtZWlzYSBob3ZlZHNha2VsaWcgYXYgaW5zZWt0ZXIsIGxhcnZlciBvZyBlZGRlcmtvcHBlci4gT20gaMO4c3RlbiBvZyB2aW50ZXJlbiBzcGlzZXIgZGVuIG1lciBmcsO4IG9nIGFubmVuIHBsYW50ZWtvc3QuIERlbiBvcHB0cmVyIG9mdGUgaSBsw7hzZSBmbG9ra2VyIHNhbW1lbiBtZWQgYW5kcmUgbWVpc2VyIG9nIHNtw6VmdWdsZXIgdXRlbmZvciBoZWtrZXRpZGVuLjwvcD48aDI+THlkPC9oMj48cD5TYW5nZW4gZXIgdmFyaWVydCwgbWVuIGJlc3TDpXIgb2Z0ZSBhdiBrbGFyZSwgbWV0YWxsaXNrZSBzdHJvZmVyIG1lZCB0byBlbGxlciB0cmUgc3RhdmVsc2VyLCBnamVybmUgZ2plbmdpdHQgc29tIMKrdGktdHUsIHRpLXR1wrsgZWxsZXIgwqt0aS10aS10YcK7LiBBcnRlbiBoYXIgb2dzw6UgZmxlcmUgbG9ra2UtIG9nIHZhcnNlbGx5ZGVyIG9nIGthbiBldHRlcmxpZ25lIGx5ZGVyIGZyYSBhbmRyZSBtZWlzZXIuPC9wPjxoMj5IZWtraW5nIG9nIGZ1Z2xla2Fzc2U8L2gyPjxwPktqw7h0dG1laXMgaGVra2VyIGkgbmF0dXJsaWdlIGh1bHJvbSBvZyB0YXIgZ2plcm5lIGkgYnJ1ayBmdWdsZWthc3Nlci4gUmVpcmV0IGJ5Z2dlcyBob3ZlZHNha2VsaWcgYXYgbW9zZSBvZyBmb3JlcyBtZWQgaMOlciwgdWxsIG9nIGZqw6ZyLiBFZ2dsZWdnaW5nZW4gc3RhcnRlciB0aWRsaWdzdCBpIGFwcmlsIGkgU8O4ci1Ob3JnZSBvZyBzZW5lcmUgbm9yZCBpIGxhbmRldC4gRXQga3VsbCBiZXN0w6VyIHZhbmxpZ3ZpcyBhdiA24oCTMTEgaHZpdGUgZWdnIG1lZCByw7hkYnJ1bmUgcHJpa2tlci4gSHVubmVuIHJ1Z2VyIGkgb210cmVudCAxMuKAkzE1IGRhZ2VyLCBvZyB1bmdlbmUgZm9ybGF0ZXIgcmVpcmV0IGV0dGVyIG9tdHJlbnQgMTbigJMyMiBkYWdlci4gSSBTw7hyLU5vcmdlIGthbiBhcnRlbiBmw6UgdG8ga3VsbCBpIGzDuHBldCBhdiBlbiBzZXNvbmcuPC9wPjxoMj5WZWQgZnVnbGVtYXRlcjwvaDI+PHA+S2rDuHR0bWVpcyBlciBlbiBhdiBkZSB2YW5saWdzdGUgZ2plc3RlbmUgdmVkIG5vcnNrZSBmw7RyaW5nc3BsYXNzZXIuIERlbiBzcGlzZXIgbXllIGZvcnNramVsbGlnLCBtZW4gZm9yZXRyZWtrZXIgc8OmcmxpZyBzb2xzaWtrZWZyw7gsIHRhbGcgb2cgbWVpc2Vib2xsZXIuIE9mdGUgaGVudGVyIGRlbiBldHQgZnLDuCBvbSBnYW5nZW4gb2cgZmx5ciB0aWwgZW4gZ3JlaW4gaSBuw6ZyaGV0ZW4gZm9yIMOlIGhha2tlIGF2IHNrYWxsZXQuPC9wPjxoMj5TdGF0dXM8L2gyPjxwPktqw7h0dG1laXMgZXIgZW4gdmFubGlnIG9nIGV0YWJsZXJ0IGhla2tlZnVnbCBpIE5vcmdlLiBBcnRlbiBlciB2dXJkZXJ0IHNvbSBMQyDigJMgTGl2c2tyYWZ0aWcgcMOlIE5vcnNrIHLDuGRsaXN0ZSBmb3IgYXJ0ZXIuIEFydHNkYXRhYmFua2VuLXRha3Nvbi1JRDogMjAzNjUzLjwvcD4iLCJDYS4gMTUgY20iLCIxNeKAkzIyIGciLCJHdWwgdW5kZXJzaWRlIG1lZCBzdmFydCBtaWR0c3RyaXBlLCBzdmFydCBob2RlIG9nIGh2aXRlIGtpbm4uIFJ5Z2dlbiBlciBncsO4bm5ha3RpZywgb2cgdmluZ2VuZSBlciBibMOlZ3LDpSBtZWQgZXQgbHlzdCB2aW5nZWLDpW5kLiBIYW5uZW4gaGFyIHZhbmxpZ3ZpcyBicmVkZXJlIGJyeXN0c3RyaXBlIG9nIHR5ZGVsaWdlcmUgc3ZhcnQgYnVrZmxla2sgZW5uIGh1bm5lbi4iLCJTa29nLCBzw6ZybGlnIGzDuHYtIG9nIGJsYW5kaW5nc3Nrb2cgaSBsYXZsYW5kZXQsIHNhbXQgaGFnZXIsIHBhcmtlciBvZyBrdWx0dXJsYW5kc2thcCBtZWQgdHLDpnIsIGh1bHJvbSBlbGxlciBmdWdsZWthc3Nlci4iLCJWYW5saWcgb3ZlciBuZXN0ZW4gaGVsZSBOb3JnZSwgbWVuIG1pbmRyZSB2YW5saWcgaSBkZSBtZXN0IGFscGluZSBvbXLDpWRlbmUuIE1lc3QgdGFsbHJpayBpIGxhdmxhbmRldHMgbMO4di0gb2cgYmxhbmRpbmdzc2tvZy4iLCJIZWxlIMOlcmV0LiBIb3ZlZHNha2VsaWcgc3RhbmRmdWdsLCBtZW4gc3RyZWlmIG9nIGVua2VsdGUga29ydGVyZSB0cmVrayBrYW4gZm9yZWtvbW1lIG9tIGjDuHN0ZW4uIiwiSW5zZWt0ZXIsIGxhcnZlciBvZyBlZGRlcmtvcHBlciBpIHNvbW1lcmhhbHbDpXJldDsgZnLDuCBvZyBhbm5lbiBwbGFudGVrb3N0IG9tIGjDuHN0ZW4gb2cgdmludGVyZW4uIFZlZCBmdWdsZW1hdGVyIGZvcmV0cmVra2VyIGRlbiBzw6ZybGlnIHNvbHNpa2tlZnLDuCwgdGFsZyBvZyBtZWlzZWJvbGxlci4iLCJMQyDigJMgTGl2c2tyYWZ0aWciLCJGaW5uZXMgaSBOb3JnZS4gVmFubGlnIG9nIGV0YWJsZXJ0IGhla2tlZnVnbC4iLCIyMDM2NTMiLCJodHRwczovL2FydHNkYXRhYmFua2VuLm5vL2FydGVyL3Rha3Nvbi8yMDM2NTMiLCJodHRwczovL3NubC5uby9raiVDMyVCOHR0bWVpcyIsImh0dHBzOi8vd3d3LmZ1Z2xldmVubmVuLm5vL2FydGVyLz9vcl9pZD00NDciLCJodHRwczovL3d3dy5iaXJkbGlmZS5uby9mdWdsZWt1bm5za2FwL2Z1Z2xlYXRsYXMvIiwiMjAyNi0wNy0xNCIsIkZ1bGxzdGVuZGlnIGt2YWxpdGV0c3Npa3JldCDigJMgYXJ0c3Byb2ZpbCB2MSAodGVzdGFydCkiCg=='
+        run: |
+          python - <<'PY'
+          import base64, csv, io, os
+          from pathlib import Path
+
+          path = Path('arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv')
+          text = path.read_text(encoding='utf-8')
+          reader = csv.DictReader(io.StringIO(text))
+          headers = reader.fieldnames
+          rows = list(reader)
+
+          row_text = base64.b64decode(os.environ['ROW_B64']).decode('utf-8')
+          new_row = next(csv.DictReader(io.StringIO(','.join(f'"{h}"' for h in headers) + '\n' + row_text)))
+
+          matches = [i for i, row in enumerate(rows) if row.get('post_name') == 'kjottmeis']
+          if len(matches) != 1:
+              raise SystemExit(f'Forventet én Kjøttmeis-rad, fant {len(matches)}')
+
+          rows[matches[0]] = new_row
+
+          out = io.StringIO()
+          writer = csv.DictWriter(out, fieldnames=headers, quoting=csv.QUOTE_ALL, lineterminator='\n')
+          writer.writeheader()
+          writer.writerows(rows)
+
+          check = list(csv.DictReader(io.StringIO(out.getvalue())))
+          if len(check) != 238:
+              raise SystemExit(f'Forventet 238 arter, fant {len(check)}')
+          if any(len(row) != 24 for row in check):
+              raise SystemExit('Fant rad med feil antall kolonner')
+
+          path.write_text(out.getvalue(), encoding='utf-8')
+          PY
+
+      - name: Commit endringen og fjern engangsjobben
+        run: |
+          rm .github/workflows/naturblikk-update-kjottmeis-once.yml
+          git config user.name "Naturblikk Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv .github/workflows/naturblikk-update-kjottmeis-once.yml
+          git commit -m "Kvalitetssikre Kjøttmeis i artsfil v4"
+          git push origin HEAD:main
