@@ -2,6 +2,9 @@ name: Naturblikk kvalitetsbatch 03
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'arter/.naturblikk-batch3-trigger'
   issues:
     types: [opened]
 
@@ -10,7 +13,7 @@ permissions:
 
 jobs:
   oppdater-artsfil:
-    if: github.event_name == 'workflow_dispatch' || github.event.issue.title == 'Kjør Naturblikk kvalitetsbatch 3'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push' || github.event.issue.title == 'Kjør Naturblikk kvalitetsbatch 3'
     runs-on: ubuntu-latest
 
     steps:
