@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-15**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **21**
-- Gjenstår: **217**
+- Fullstendig kvalitetssikret: **36**
+- Gjenstår: **202**
 
 ## Ferdig kontrollert
 
@@ -37,6 +37,24 @@ Sist oppdatert: **2026-07-15**
 - Skjære (`skjaere`)
 - Stillits (`stillits`)
 - Svarttrost (`svarttrost`)
+
+### Batch 3 – hage-, skog-, troste- og duearter
+
+- Gjerdesmett (`gjerdesmett`)
+- Grønnspett (`groennspett`)
+- Gråtrost (`graatrost`)
+- Jernspurv (`jernspurv`)
+- Kjernebiter (`kjernebiter`)
+- Måltrost (`maaltrost`)
+- Nøttekråke (`nottekraake`)
+- Nøtteskrike (`notteskrike`)
+- Ringdue (`ringdue`)
+- Rødvingetrost (`roedvingetrost`)
+- Sidensvans (`sidensvans`)
+- Stær (`staer`)
+- Svartspett (`svartspett`)
+- Trekryper (`trekryper`)
+- Tyrkerdue (`tyrkerdue`)
 
 ## Gjenstår
 
