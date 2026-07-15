@@ -1,6 +1,7 @@
-name: Naturblikk kjør kvalitetsbatch 03 via sak
+name: Naturblikk kvalitetsbatch 03
 
 on:
+  workflow_dispatch:
   issues:
     types: [opened]
 
@@ -9,7 +10,7 @@ permissions:
 
 jobs:
   oppdater-artsfil:
-    if: github.event.issue.title == 'Kjør Naturblikk kvalitetsbatch 3'
+    if: github.event_name == 'workflow_dispatch' || github.event.issue.title == 'Kjør Naturblikk kvalitetsbatch 3'
     runs-on: ubuntu-latest
 
     steps:
