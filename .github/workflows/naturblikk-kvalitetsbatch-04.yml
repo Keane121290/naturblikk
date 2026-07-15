@@ -1,0 +1,99 @@
+name: Naturblikk kvalitetsbatch 04
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'arter/.naturblikk-batch4-trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  oppdater-artsfil:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hent repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Oppdater og valider batch 4
+        run: |
+          python - <<'PY'
+          import base64, csv, io, json, zlib
+          from pathlib import Path
+
+          payload_path = Path('arter/.naturblikk-batch4-payload.b64')
+          payload = json.loads(zlib.decompress(base64.b64decode(payload_path.read_text(encoding='utf-8').strip())).decode('utf-8'))
+          csv_path = Path('arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv')
+          status_path = Path('arter/kvalitetskontroll-status.md')
+
+          with csv_path.open(encoding='utf-8-sig', newline='') as f:
+              reader = csv.DictReader(f)
+              headers = reader.fieldnames
+              rows = list(reader)
+
+          if headers != payload['headers']:
+              raise SystemExit('CSV-header avviker fra forventet 24-kolonners struktur')
+          if len(rows) != 238:
+              raise SystemExit(f'Forventet 238 arter, fant {len(rows)}')
+          if len({r['post_name'] for r in rows}) != 238:
+              raise SystemExit('CSV inneholder dupliserte slugs')
+
+          replacements = {r['post_name']: r for r in payload['rows']}
+          expected = set(payload['expected_slugs'])
+          if set(replacements) != expected or len(replacements) != 15:
+              raise SystemExit('Payload inneholder ikke nøyaktig de 15 forventede artene')
+
+          found = set()
+          for i, row in enumerate(rows):
+              slug = row['post_name']
+              if slug in replacements:
+                  rows[i] = replacements[slug]
+                  found.add(slug)
+
+          missing = expected - found
+          if missing:
+              raise SystemExit(f'Mangler arter i hovedfilen: {sorted(missing)}')
+
+          for slug in expected:
+              row = next(r for r in rows if r['post_name'] == slug)
+              if set(row) != set(headers):
+                  raise SystemExit(f'Feil kolonnestruktur for {slug}')
+              if not row['importstatus'].startswith('Fullstendig kvalitetssikret'):
+                  raise SystemExit(f'Ugyldig importstatus for {slug}')
+              if row['sist_kontrollert'] != '2026-07-15':
+                  raise SystemExit(f'Ugyldig kontrolldato for {slug}')
+              if row['lang_beskrivelse'].count('<h2>') < 6:
+                  raise SystemExit(f'For få strukturerte avsnitt for {slug}')
+              if 'Status og bruk i Naturblikk' in row['lang_beskrivelse']:
+                  raise SystemExit(f'Generisk fylltekst finnes fortsatt for {slug}')
+              if 'adferd' in row['lang_beskrivelse'].lower():
+                  raise SystemExit(f'Ikke-standardisert språkform for {slug}')
+
+          out = io.StringIO()
+          writer = csv.DictWriter(out, fieldnames=headers, quoting=csv.QUOTE_ALL, lineterminator='\n')
+          writer.writeheader()
+          writer.writerows(rows)
+          csv_path.write_text(out.getvalue(), encoding='utf-8')
+          status_path.write_text(payload['status'], encoding='utf-8')
+
+          for path in (
+              Path('.github/workflows/naturblikk-kvalitetsbatch-04.yml'),
+              Path('arter/.naturblikk-batch4-trigger'),
+              Path('arter/.naturblikk-batch4-payload.b64'),
+          ):
+              if path.exists():
+                  path.unlink()
+          PY
+
+      - name: Lagre batch 4
+        run: |
+          git config user.name 'Naturblikk kvalitetskontroll'
+          git config user.email 'post@naturblikk.no'
+          git add -A
+          git commit -m 'Kvalitetssikre batch 4: 15 skog-, våtmarks- og trekkfugler'
+          git push origin main
