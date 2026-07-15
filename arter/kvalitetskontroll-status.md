@@ -1,10 +1,10 @@
 # Naturblikk – status for kvalitetskontroll
 
-Sist oppdatert: **2026-07-14**
+Sist oppdatert: **2026-07-15**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **11**
-- Gjenstår: **227**
+- Fullstendig kvalitetssikret: **21**
+- Gjenstår: **217**
 
 ## Ferdig kontrollert
 
@@ -25,10 +25,23 @@ Sist oppdatert: **2026-07-14**
 - Pilfink (`pilfink`)
 - Gråspurv (`graaspurv`)
 
+### Batch 2 – finker, hage- og skogarter
+
+- Bjørkefink (`bjorkefink`)
+- Bokfink (`bokfink`)
+- Flaggspett (`flaggspett`)
+- Grønnsisik (`groennsisik`)
+- Gråsisik (`graasisik`)
+- Gulspurv (`gulspurv`)
+- Rødstrupe (`roedstrupe`)
+- Skjære (`skjaere`)
+- Stillits (`stillits`)
+- Svarttrost (`svarttrost`)
+
 ## Gjenstår
 
-Alle arter som ikke er oppført over. Neste batch velges blant vanlige hage-, skog- og fuglematerarter.
+Alle arter som ikke er oppført over.
 
 ## Kontrollstandard
 
-En art regnes som fullstendig kvalitetssikret når navn, taksonomi, rødlistestatus, status i Norge, størrelse, vekt, kjennetegn, levested, utbredelse, sesong, næring, kilder og artsspesifikk langtekst er kontrollert. Feltet `importstatus` starter da med `Fullstendig kvalitetssikret`.
+En art regnes som fullstendig kvalitetssikret når navn, taksonomi, rødlistestatus, status i Norge, størrelse, vekt, kjennetegn, levested, utbredelse, sesong, næring, kilder og artsspesifikk langtekst er kontrollert. Teksten skal også være språkvasket og fri for generiske fyllsetninger. Feltet `importstatus` starter da med `Fullstendig kvalitetssikret`.
