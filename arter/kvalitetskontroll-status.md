@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-15**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **36**
-- Gjenstår: **202**
+- Fullstendig kvalitetssikret: **51**
+- Gjenstår: **187**
 
 ## Ferdig kontrollert
 
@@ -55,6 +55,24 @@ Sist oppdatert: **2026-07-15**
 - Svartspett (`svartspett`)
 - Trekryper (`trekryper`)
 - Tyrkerdue (`tyrkerdue`)
+
+### Batch 4 – skog-, våtmarks- og trekkfugler
+
+- Gjøk (`gjok`)
+- Gluttsnipe (`gluttsnipe`)
+- Grankorsnebb (`grankorsnebb`)
+- Gransanger (`gransanger`)
+- Gravand (`gravand`)
+- Grønnstilk (`groennstilk`)
+- Gråfluesnapper (`graafluesnapper`)
+- Grågås (`graagaas`)
+- Gråhegre (`graahegre`)
+- Gråmåke (`graamaake`)
+- Gråspett (`graaspett`)
+- Gulerle (`gulerle`)
+- Gulsanger (`gulsanger`)
+- Hagesanger (`hagesanger`)
+- Hauksanger (`hauksanger`)
 
 ## Gjenstår
 
