@@ -1,0 +1,19 @@
+name: Start Naturblikk batch 6 via issue
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  start-batch:
+    if: github.event.issue.title == 'Start Naturblikk batch 6'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start hovedarbeidsflyten
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run naturblikk-kvalitetsbatch-06.yml --repo ${{ github.repository }} --ref main
