@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **111**
-- Gjenstår: **127**
+- Fullstendig kvalitetssikret: **126**
+- Gjenstår: **112**
 
 ## Ferdig kontrollert
 
@@ -145,6 +145,24 @@ Sist oppdatert: **2026-07-16**
 - Polarlomvi (`polarlomvi`)
 - Polarsisik (`polarsisik`)
 - Rapphøne (`rapphone`)
+
+### Batch 9 – kyst-, våtmarks-, skog- og kulturlandskapsarter
+
+- Ravn (`ravn`)
+- Ringtrost (`ringtrost`)
+- Rosenfink (`rosenfink`)
+- Rugde (`rugde`)
+- Rødnebbterne (`roednebbterne`)
+- Rødstilk (`roedstilk`)
+- Rødstjert (`roedstjert`)
+- Rørsanger (`roersanger`)
+- Sandlo (`sandlo`)
+- Sandsvale (`sandsvale`)
+- Sanglerke (`sanglerke`)
+- Sangsvane (`sangsvane`)
+- Siland (`siland`)
+- Sildemåke (`sildemaake`)
+- Sivhauk (`sivhauk`)
 
 ## Gjenstår
 
