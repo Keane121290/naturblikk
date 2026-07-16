@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **186**
-- Gjenstår: **52**
+- Fullstendig kvalitetssikret: **201**
+- Gjenstår: **37**
 
 ## Ferdig kontrollert
 
@@ -235,6 +235,24 @@ Sist oppdatert: **2026-07-16**
 - Vierspurv (`vierspurv`)
 - Vintererle (`vintererle`)
 - Vipe (`vipe`)
+
+### Batch 14 – sjøfugler, vadere, ender, sangere og skogarter
+
+- Alke (`alke`)
+- Avosett (`avosett`)
+- Bergand (`bergand`)
+- Bergirisk (`bergirisk`)
+- Blåstrupe (`blaastrupe`)
+- Boltit (`boltit`)
+- Brunnakke (`brunnakke`)
+- Brushane (`brushane`)
+- Buskskvett (`buskskvett`)
+- Bydue (`bydue`)
+- Bøksanger (`boksanger`)
+- Båndkorsnebb (`baandkorsnebb`)
+- Dobbeltbekkasin (`dobbeltbekkasin`)
+- Duetrost (`duetrost`)
+- Dvergdykker (`dvergdykker`)
 
 ## Gjenstår
 
