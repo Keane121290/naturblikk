@@ -1,10 +1,10 @@
 # Naturblikk – status for kvalitetskontroll
 
-Sist oppdatert: **2026-07-15**
+Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **51**
-- Gjenstår: **187**
+- Fullstendig kvalitetssikret: **66**
+- Gjenstår: **172**
 
 ## Ferdig kontrollert
 
@@ -73,6 +73,24 @@ Sist oppdatert: **2026-07-15**
 - Gulsanger (`gulsanger`)
 - Hagesanger (`hagesanger`)
 - Hauksanger (`hauksanger`)
+
+### Batch 5 – ugler, sjøfugler, vadere og kulturlandskapsarter
+
+- Haukugle (`haukugle`)
+- Havelle (`havelle`)
+- Havhest (`havhest`)
+- Havsule (`havsule`)
+- Havsvale (`havsvale`)
+- Havørn (`havorn`)
+- Heilo (`heilo`)
+- Heipiplerke (`heipiplerke`)
+- Hettemåke (`hettemaake`)
+- Horndykker (`horndykker`)
+- Hornugle (`hornugle`)
+- Hortulan (`hortulan`)
+- Hubro (`hubro`)
+- Hvitkinngås (`hvitkinngaas`)
+- Hvitryggspett (`hvitryggspett`)
 
 ## Gjenstår
 
