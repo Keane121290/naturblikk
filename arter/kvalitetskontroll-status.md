@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **156**
-- Gjenstår: **82**
+- Fullstendig kvalitetssikret: **171**
+- Gjenstår: **67**
 
 ## Ferdig kontrollert
 
@@ -199,6 +199,24 @@ Sist oppdatert: **2026-07-16**
 - Storlom (`storlom`)
 - Stormsvale (`stormsvale`)
 - Storskarv (`storskarv`)
+
+### Batch 12 – vadere, sjøfugler, sangere og kulturlandskapsarter
+
+- Storspove (`storspove`)
+- Strandsnipe (`strandsnipe`)
+- Svartand (`svartand`)
+- Svartbak (`svartbak`)
+- Svarthalespove (`svarthalespove`)
+- Svarthvit fluesnapper (`svarthvit-fluesnapper`)
+- Svartrødstjert (`svartrodstjert`)
+- Taffeland (`taffeland`)
+- Taksvale (`taksvale`)
+- Teist (`teist`)
+- Temmincksnipe (`temmincksnipe`)
+- Tjeld (`tjeld`)
+- Tornsanger (`tornsanger`)
+- Tornskate (`tornskate`)
+- Trane (`trane`)
 
 ## Gjenstår
 
