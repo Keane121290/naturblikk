@@ -1,0 +1,181 @@
+name: Naturblikk kvalitetsbatch 06
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'arter/.naturblikk-batch6-trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  oppdater-artsfil:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hent repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Oppdater og valider batch 6
+        run: |
+          python - <<'PY'
+          import csv
+          import io
+          import json
+          from copy import deepcopy
+          from pathlib import Path
+
+          csv_path = Path('arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv')
+          status_path = Path('arter/kvalitetskontroll-status.md')
+          payload_path = Path('arter/kvalitetsbatch-06-payload.json')
+
+          payload = json.loads(payload_path.read_text(encoding='utf-8'))
+          expected_slugs = payload['expected_slugs']
+          updates = payload['updates']
+
+          if len(expected_slugs) != 15 or len(set(expected_slugs)) != 15:
+              raise SystemExit('Batch 6 må inneholde nøyaktig 15 unike slugs')
+
+          with csv_path.open(encoding='utf-8-sig', newline='') as f:
+              reader = csv.DictReader(f)
+              headers = reader.fieldnames
+              rows = list(reader)
+
+          expected_headers = [
+              'post_title', 'post_name', 'post_status', 'artsgruppe',
+              'vitenskapelig_navn', 'engelsk_navn', 'kort_beskrivelse',
+              'lang_beskrivelse', 'storrelse', 'vekt', 'kjennetegn',
+              'levested', 'utbredelse', 'sesong_aktiv_periode',
+              'mat_naering', 'rodlistestatus', 'status_i_norge',
+              'artsdatabanken_takson_id', 'kilde_artsdatabanken',
+              'kilde_snl', 'kilde_fuglevennen_miljolaere',
+              'kilde_birdlife_fugleatlas', 'sist_kontrollert', 'importstatus'
+          ]
+
+          if headers != expected_headers:
+              raise SystemExit('CSV-header avviker fra forventet 24-kolonners struktur')
+          if len(rows) != 238:
+              raise SystemExit(f'Forventet 238 arter, fant {len(rows)}')
+          if len({row['post_name'] for row in rows}) != 238:
+              raise SystemExit('CSV inneholder dupliserte slugs')
+
+          original_rows = deepcopy(rows)
+          update_map = {item['post_name']: item for item in updates}
+          if set(update_map) != set(expected_slugs) or len(update_map) != 15:
+              raise SystemExit('Payload inneholder ikke nøyaktig de 15 forventede artene')
+
+          protected_fields = {
+              'post_title', 'post_name', 'post_status', 'artsgruppe',
+              'vitenskapelig_navn', 'engelsk_navn', 'artsdatabanken_takson_id',
+              'kilde_artsdatabanken', 'kilde_snl',
+              'kilde_fuglevennen_miljolaere', 'kilde_birdlife_fugleatlas'
+          }
+          allowed_fields = set(headers) - protected_fields
+
+          found = set()
+          for row in rows:
+              slug = row['post_name']
+              if slug not in update_map:
+                  continue
+              patch = update_map[slug]
+              unknown = set(patch) - (allowed_fields | {'post_name'})
+              if unknown:
+                  raise SystemExit(f'Ugyldige felter for {slug}: {sorted(unknown)}')
+              for field, value in patch.items():
+                  if field != 'post_name':
+                      row[field] = value
+              found.add(slug)
+
+          missing = set(expected_slugs) - found
+          if missing:
+              raise SystemExit(f'Mangler arter i hovedfilen: {sorted(missing)}')
+
+          target_set = set(expected_slugs)
+          changed = []
+          for before, after in zip(original_rows, rows):
+              if before != after:
+                  changed.append(before['post_name'])
+              if before['post_name'] not in target_set and before != after:
+                  raise SystemExit(f'Ikke-målart ble endret: {before["post_name"]}')
+
+          if set(changed) != target_set:
+              raise SystemExit(f'Feil sett med endrede arter: {sorted(changed)}')
+
+          for slug in expected_slugs:
+              row = next(r for r in rows if r['post_name'] == slug)
+              if not row['importstatus'].startswith('Fullstendig kvalitetssikret'):
+                  raise SystemExit(f'Ugyldig importstatus for {slug}')
+              if row['sist_kontrollert'] != '2026-07-16':
+                  raise SystemExit(f'Feil kontrolldato for {slug}')
+              if row['lang_beskrivelse'].count('<h2>') < 7:
+                  raise SystemExit(f'Mangler strukturert langtekst for {slug}')
+              if 'Status og bruk i Naturblikk' in row['lang_beskrivelse']:
+                  raise SystemExit(f'Generisk fylltekst finnes fortsatt for {slug}')
+              if 'Mat og adferd' in row['lang_beskrivelse']:
+                  raise SystemExit(f'Gammel språkform finnes fortsatt for {slug}')
+
+          out = io.StringIO()
+          writer = csv.DictWriter(
+              out,
+              fieldnames=headers,
+              quoting=csv.QUOTE_ALL,
+              lineterminator='\n'
+          )
+          writer.writeheader()
+          writer.writerows(rows)
+          csv_path.write_text(out.getvalue(), encoding='utf-8')
+
+          status = status_path.read_text(encoding='utf-8')
+          status = status.replace('Sist oppdatert: **2026-07-16**', 'Sist oppdatert: **2026-07-16**', 1)
+          status = status.replace('Fullstendig kvalitetssikret: **66**', 'Fullstendig kvalitetssikret: **81**', 1)
+          status = status.replace('Gjenstår: **172**', 'Gjenstår: **157**', 1)
+
+          batch_section = '''### Batch 6 – rovfugler, ugler, ender og skogarter
+
+- Hønsehauk (`honsehauk`)
+- Isfugl (`isfugl`)
+- Jaktfalk (`jaktfalk`)
+- Jerpe (`jerpe`)
+- Jordugle (`jordugle`)
+- Kaie (`kaie`)
+- Kanadagås (`kanadagaas`)
+- Kattugle (`kattugle`)
+- Knekkand (`knekkand`)
+- Knoppsvane (`knoppsvane`)
+- Kongeørn (`kongeorn`)
+- Konglebit (`konglebit`)
+- Kvinand (`kvinand`)
+- Laksand (`laksand`)
+- Lappfiskand (`lappfiskand`)
+
+'''
+          marker = '## Gjenstår\n'
+          if batch_section not in status:
+              if marker not in status:
+                  raise SystemExit('Fant ikke innsettingspunkt i statusfilen')
+              status = status.replace(marker, batch_section + marker, 1)
+
+          if 'Fullstendig kvalitetssikret: **81**' not in status or 'Gjenstår: **157**' not in status:
+              raise SystemExit('Statusfilen fikk feil antall')
+          status_path.write_text(status, encoding='utf-8')
+
+          for path in (
+              Path('.github/workflows/naturblikk-kvalitetsbatch-06.yml'),
+              Path('arter/kvalitetsbatch-06-payload.json'),
+              Path('arter/.naturblikk-batch6-trigger'),
+          ):
+              if path.exists():
+                  path.unlink()
+          PY
+
+      - name: Lagre batch 6
+        run: |
+          git config user.name 'Naturblikk kvalitetskontroll'
+          git config user.email 'post@naturblikk.no'
+          git add -A
+          git commit -m 'Kvalitetssikre batch 6: 15 rovfugler, ugler, ender og skogarter'
+          git push origin main
