@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **231**
-- Gjenstår: **7**
+- Fullstendig kvalitetssikret: **238**
+- Gjenstår: **0**
 
 ## Ferdig kontrollert
 
@@ -290,9 +290,19 @@ Sist oppdatert: **2026-07-16**
 - Toppand (`toppand`)
 - Toppdykker (`toppdykker`)
 
+### Batch 17 – sluttbatch med de siste sju artene
+
+- Gresshoppesanger (`gresshoppesanger`)
+- Svartstrupe (`svartstrupe`)
+- Topplerke (`topplerke`)
+- Toppskarv (`toppskarv`)
+- Tornirisk (`tornirisk`)
+- Ærfugl (`aerfugl`)
+- Åkerrikse (`aakerrikse`)
+
 ## Gjenstår
 
-Alle arter som ikke er oppført over.
+Ingen. Alle 238 arter er fullstendig kvalitetssikret.
 
 ## Kontrollstandard
 
