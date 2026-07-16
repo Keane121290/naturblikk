@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **141**
-- Gjenstår: **97**
+- Fullstendig kvalitetssikret: **156**
+- Gjenstår: **82**
 
 ## Ferdig kontrollert
 
@@ -181,6 +181,24 @@ Sist oppdatert: **2026-07-16**
 - Snøgås (`snogaas`)
 - Snøspurv (`snosporv`)
 - Snøugle (`snougle`)
+
+### Batch 11 – skog-, kyst-, våtmarks- og sjøfugler
+
+- Sothøne (`sothone`)
+- Sotsnipe (`sotsnipe`)
+- Splitterne (`splitterne`)
+- Spurvehauk (`spurvehauk`)
+- Spurveugle (`spurveugle`)
+- Steinskvett (`steinskvett`)
+- Steinvender (`steinvender`)
+- Stjertand (`stjertand`)
+- Stjertmeis (`stjertmeis`)
+- Stokkand (`stokkand`)
+- Storfugl (`storfugl`)
+- Storjo (`storjo`)
+- Storlom (`storlom`)
+- Stormsvale (`stormsvale`)
+- Storskarv (`storskarv`)
 
 ## Gjenstår
 
