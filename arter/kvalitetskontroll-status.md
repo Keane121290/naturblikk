@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **66**
-- Gjenstår: **172**
+- Fullstendig kvalitetssikret: **81**
+- Gjenstår: **157**
 
 ## Ferdig kontrollert
 
@@ -91,6 +91,24 @@ Sist oppdatert: **2026-07-16**
 - Hubro (`hubro`)
 - Hvitkinngås (`hvitkinngaas`)
 - Hvitryggspett (`hvitryggspett`)
+
+### Batch 6 – rovfugler, ugler, ender og skogarter
+
+- Hønsehauk (`honsehauk`)
+- Isfugl (`isfugl`)
+- Jaktfalk (`jaktfalk`)
+- Jerpe (`jerpe`)
+- Jordugle (`jordugle`)
+- Kaie (`kaie`)
+- Kanadagås (`kanadagaas`)
+- Kattugle (`kattugle`)
+- Knekkand (`knekkand`)
+- Knoppsvane (`knoppsvane`)
+- Kongeørn (`kongeorn`)
+- Konglebit (`konglebit`)
+- Kvinand (`kvinand`)
+- Laksand (`laksand`)
+- Lappfiskand (`lappfiskand`)
 
 ## Gjenstår
 
