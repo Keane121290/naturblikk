@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **96**
-- Gjenstår: **142**
+- Fullstendig kvalitetssikret: **111**
+- Gjenstår: **127**
 
 ## Ferdig kontrollert
 
@@ -127,6 +127,24 @@ Sist oppdatert: **2026-07-16**
 - Løvsanger (`lovsanger`)
 - Låvesvale (`laavesvale`)
 - Makrellterne (`makrellterne`)
+
+### Batch 8 – sangere, våtmarks-, skog- og kystarter
+
+- Munk (`munk`)
+- Musvåk (`musvaak`)
+- Myrhauk (`myrhauk`)
+- Myrrikse (`myrrikse`)
+- Myrsanger (`myrsanger`)
+- Myrsnipe (`myrsnipe`)
+- Møller (`moller`)
+- Nattergal (`nattergal`)
+- Nattravn (`nattravn`)
+- Orrfugl (`orrfugl`)
+- Perleugle (`perleugle`)
+- Pirol (`pirol`)
+- Polarlomvi (`polarlomvi`)
+- Polarsisik (`polarsisik`)
+- Rapphøne (`rapphone`)
 
 ## Gjenstår
 
