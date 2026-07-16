@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **126**
-- Gjenstår: **112**
+- Fullstendig kvalitetssikret: **141**
+- Gjenstår: **97**
 
 ## Ferdig kontrollert
 
@@ -163,6 +163,24 @@ Sist oppdatert: **2026-07-16**
 - Siland (`siland`)
 - Sildemåke (`sildemaake`)
 - Sivhauk (`sivhauk`)
+
+### Batch 10 – våtmarks-, kyst-, skog- og arktiske arter
+
+- Sivhøne (`sivhone`)
+- Sivsanger (`sivsanger`)
+- Sivspurv (`sivspurv`)
+- Sjøorre (`sjoorre`)
+- Skjeand (`skjeand`)
+- Skjærpiplerke (`skjaerpiplerke`)
+- Skogdue (`skogdue`)
+- Skogsnipe (`skogsnipe`)
+- Slagugle (`slagugle`)
+- Smålom (`smaalom`)
+- Småspove (`smaaspove`)
+- Snadderand (`snadderand`)
+- Snøgås (`snogaas`)
+- Snøspurv (`snosporv`)
+- Snøugle (`snougle`)
 
 ## Gjenstår
 
