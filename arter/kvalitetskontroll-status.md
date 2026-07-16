@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **81**
-- Gjenstår: **157**
+- Fullstendig kvalitetssikret: **96**
+- Gjenstår: **142**
 
 ## Ferdig kontrollert
 
@@ -109,6 +109,24 @@ Sist oppdatert: **2026-07-16**
 - Kvinand (`kvinand`)
 - Laksand (`laksand`)
 - Lappfiskand (`lappfiskand`)
+
+### Batch 7 – nordlige arter, sjøfugler og trekkfugler
+
+- Lappiplerke (`lappiplerke`)
+- Lappmeis (`lappmeis`)
+- Lappsanger (`lappsanger`)
+- Lappspove (`lappspove`)
+- Lappspurv (`lappspurv`)
+- Lappugle (`lappugle`)
+- Lavskrike (`lavskrike`)
+- Lerkefalk (`lerkefalk`)
+- Linerle (`linerle`)
+- Lirype (`lirype`)
+- Lomvi (`lomvi`)
+- Lunde (`lunde`)
+- Løvsanger (`lovsanger`)
+- Låvesvale (`laavesvale`)
+- Makrellterne (`makrellterne`)
 
 ## Gjenstår
 
