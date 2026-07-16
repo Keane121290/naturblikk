@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **216**
-- Gjenstår: **22**
+- Fullstendig kvalitetssikret: **231**
+- Gjenstår: **7**
 
 ## Ferdig kontrollert
 
@@ -271,6 +271,24 @@ Sist oppdatert: **2026-07-16**
 - Fjellerke (`fjellerke`)
 - Fjelljo (`fjelljo`)
 - Fjellmyrløper (`fjellmyrloper`)
+
+### Batch 16 – fjell-, skog-, våtmarks- og kystarter
+
+- Fjellrype (`fjellrype`)
+- Fjellvåk (`fjellvaak`)
+- Fjæreplytt (`fjaereplytt`)
+- Fossekall (`fossekall`)
+- Fuglekonge (`fuglekonge`)
+- Furukorsnebb (`furukorsnebb`)
+- Kornkråke (`kornkraake`)
+- Krikkand (`krikkand`)
+- Krykkje (`krykkje`)
+- Kråke (`kraake`)
+- Kvartbekkasin (`kvartbekkasin`)
+- Svømmesnipe (`svommesnipe`)
+- Sædgås (`saedgaas`)
+- Toppand (`toppand`)
+- Toppdykker (`toppdykker`)
 
 ## Gjenstår
 
