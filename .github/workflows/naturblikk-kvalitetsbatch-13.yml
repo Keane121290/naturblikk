@@ -46,7 +46,7 @@ jobs:
               'levested', 'utbredelse', 'sesong_aktiv_periode',
               'mat_naering', 'rodlistestatus', 'status_i_norge',
               'artsdatabanken_takson_id', 'kilde_artsdatabanken',
-              'kilde_snl', 'kilde_fuglevennen_miljolare',
+              'kilde_snl', 'kilde_fuglevennen_miljolaere',
               'kilde_birdlife_fugleatlas', 'sist_kontrollert', 'importstatus',
           ]
 
@@ -81,7 +81,7 @@ jobs:
               'post_title', 'post_name', 'post_status', 'artsgruppe',
               'vitenskapelig_navn', 'engelsk_navn',
               'artsdatabanken_takson_id', 'kilde_artsdatabanken',
-              'kilde_snl', 'kilde_fuglevennen_miljolare',
+              'kilde_snl', 'kilde_fuglevennen_miljolaere',
               'kilde_birdlife_fugleatlas',
           }
           allowed = set(headers) - protected
