@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **171**
-- Gjenstår: **67**
+- Fullstendig kvalitetssikret: **186**
+- Gjenstår: **52**
 
 ## Ferdig kontrollert
 
@@ -217,6 +217,24 @@ Sist oppdatert: **2026-07-16**
 - Tornsanger (`tornsanger`)
 - Tornskate (`tornskate`)
 - Trane (`trane`)
+
+### Batch 13 – skog-, kyst-, rov-, våtmarks- og kulturlandskapsarter
+
+- Trelerke (`trelerke`)
+- Trepiplerke (`trepiplerke`)
+- Tretåspett (`tretaaspett`)
+- Tyvjo (`tyvjo`)
+- Tårnfalk (`taarnfalk`)
+- Tårnseiler (`taarnseiler`)
+- Vaktel (`vaktel`)
+- Vandrefalk (`vandrefalk`)
+- Vannrikse (`vannrikse`)
+- Varsler (`varsler`)
+- Vendehals (`vendehals`)
+- Vepsevåk (`vepsevaak`)
+- Vierspurv (`vierspurv`)
+- Vintererle (`vintererle`)
+- Vipe (`vipe`)
 
 ## Gjenstår
 
