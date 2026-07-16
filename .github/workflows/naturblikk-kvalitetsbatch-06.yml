@@ -2,18 +2,12 @@ name: Naturblikk kvalitetsbatch 06
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'arter/.naturblikk-batch6-trigger'
-  issues:
-    types: [opened]
 
 permissions:
   contents: write
 
 jobs:
   oppdater-artsfil:
-    if: github.event_name != 'issues' || github.event.issue.title == 'Kjør Naturblikk batch 6 direkte'
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +29,7 @@ jobs:
           csv_path = Path('arter/naturblikk_arter_oppdatert_alle_238_v4_med_engelsk_navn.csv')
           status_path = Path('arter/kvalitetskontroll-status.md')
           payload_path = Path('arter/kvalitetsbatch-06-payload.json')
+
           payload = json.loads(payload_path.read_text(encoding='utf-8'))
           expected_slugs = payload['expected_slugs']
           updates = payload['updates']
@@ -122,40 +117,60 @@ jobs:
                   raise SystemExit(f'Gammel språkform finnes fortsatt for {slug}')
 
           out = io.StringIO()
-          writer = csv.DictWriter(out, fieldnames=headers, quoting=csv.QUOTE_ALL, lineterminator='\n')
+          writer = csv.DictWriter(
+              out,
+              fieldnames=headers,
+              quoting=csv.QUOTE_ALL,
+              lineterminator='\n'
+          )
           writer.writeheader()
           writer.writerows(rows)
           csv_path.write_text(out.getvalue(), encoding='utf-8')
 
           status = status_path.read_text(encoding='utf-8')
-          status = status.replace('Fullstendig kvalitetssikret: **66**', 'Fullstendig kvalitetssikret: **81**', 1)
-          status = status.replace('Gjenstår: **172**', 'Gjenstår: **157**', 1)
-          batch_section = '''### Batch 6 – rovfugler, ugler, ender og skogarter
+          status = status.replace(
+              'Fullstendig kvalitetssikret: **66**',
+              'Fullstendig kvalitetssikret: **81**',
+              1,
+          )
+          status = status.replace(
+              'Gjenstår: **172**',
+              'Gjenstår: **157**',
+              1,
+          )
 
-- Hønsehauk (`honsehauk`)
-- Isfugl (`isfugl`)
-- Jaktfalk (`jaktfalk`)
-- Jerpe (`jerpe`)
-- Jordugle (`jordugle`)
-- Kaie (`kaie`)
-- Kanadagås (`kanadagaas`)
-- Kattugle (`kattugle`)
-- Knekkand (`knekkand`)
-- Knoppsvane (`knoppsvane`)
-- Kongeørn (`kongeorn`)
-- Konglebit (`konglebit`)
-- Kvinand (`kvinand`)
-- Laksand (`laksand`)
-- Lappfiskand (`lappfiskand`)
-
-'''
+          batch_lines = [
+              '### Batch 6 – rovfugler, ugler, ender og skogarter',
+              '',
+              '- Hønsehauk (`honsehauk`)',
+              '- Isfugl (`isfugl`)',
+              '- Jaktfalk (`jaktfalk`)',
+              '- Jerpe (`jerpe`)',
+              '- Jordugle (`jordugle`)',
+              '- Kaie (`kaie`)',
+              '- Kanadagås (`kanadagaas`)',
+              '- Kattugle (`kattugle`)',
+              '- Knekkand (`knekkand`)',
+              '- Knoppsvane (`knoppsvane`)',
+              '- Kongeørn (`kongeorn`)',
+              '- Konglebit (`konglebit`)',
+              '- Kvinand (`kvinand`)',
+              '- Laksand (`laksand`)',
+              '- Lappfiskand (`lappfiskand`)',
+              '',
+              '',
+          ]
+          batch_section = '\n'.join(batch_lines)
           marker = '## Gjenstår\n'
           if batch_section not in status:
               if marker not in status:
                   raise SystemExit('Fant ikke innsettingspunkt i statusfilen')
               status = status.replace(marker, batch_section + marker, 1)
-          if 'Fullstendig kvalitetssikret: **81**' not in status or 'Gjenstår: **157**' not in status:
-              raise SystemExit('Statusfilen fikk feil antall')
+
+          if 'Fullstendig kvalitetssikret: **81**' not in status:
+              raise SystemExit('Statusfilen fikk feil antall ferdige arter')
+          if 'Gjenstår: **157**' not in status:
+              raise SystemExit('Statusfilen fikk feil antall gjenstående arter')
           status_path.write_text(status, encoding='utf-8')
 
           for path in (
