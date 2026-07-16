@@ -3,8 +3,8 @@
 Sist oppdatert: **2026-07-16**
 
 - Totalt antall arter: **238**
-- Fullstendig kvalitetssikret: **201**
-- Gjenstår: **37**
+- Fullstendig kvalitetssikret: **216**
+- Gjenstår: **22**
 
 ## Ferdig kontrollert
 
@@ -253,6 +253,24 @@ Sist oppdatert: **2026-07-16**
 - Dobbeltbekkasin (`dobbeltbekkasin`)
 - Duetrost (`duetrost`)
 - Dvergdykker (`dvergdykker`)
+
+### Batch 15 – rovfugler, våtmarks-, kyst- og fjellarter
+
+- Dvergfalk (`dvergfalk`)
+- Dvergfluesnapper (`dvergfluesnapper`)
+- Dverggås (`dverggaas`)
+- Dverglo (`dverglo`)
+- Dvergmåke (`dvergmaake`)
+- Dvergsnipe (`dvergsnipe`)
+- Dvergspett (`dvergspett`)
+- Dvergspurv (`dvergspurv`)
+- Enkeltbekkasin (`enkeltbekkasin`)
+- Fasan (`fasan`)
+- Fiskemåke (`fiskemaake`)
+- Fiskeørn (`fiskeorn`)
+- Fjellerke (`fjellerke`)
+- Fjelljo (`fjelljo`)
+- Fjellmyrløper (`fjellmyrloper`)
 
 ## Gjenstår
 
